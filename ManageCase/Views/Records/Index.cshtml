@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ManageCase.Models.Record>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.serviceDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.departmentCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocumentSource.sourceCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocumentType.documentCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.providerLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Facility.facilityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.recordReferenceNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.memo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.serviceDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.departmentCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocumentSource.sourceCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocumentType.documentCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.providerLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Facility.facilityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recordReferenceNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.memo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.recordId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.recordId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.recordId })
+        </td>
+    </tr>
+}
+
+</table>

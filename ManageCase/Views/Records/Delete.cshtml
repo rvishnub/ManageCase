@@ -1,0 +1,152 @@
+﻿@model ManageCase.Models.Record
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Record</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.departmentCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.departmentCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentSource.sourceCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocumentSource.sourceCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentType.documentCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocumentType.documentCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Facility.facilityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Facility.facilityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalCaseNumber.internalCaseId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalCaseNumber.internalCaseId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.recordReferenceNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.recordReferenceNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pageNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pageNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.recordEntryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.recordEntryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.providerFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.providerFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.providerLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.providerLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.memo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.memo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.serviceDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.serviceDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.noteSubjective)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.noteSubjective)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.noteObjective)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.noteObjective)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.noteAssessment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.noteAssessment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.notePlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.notePlan)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

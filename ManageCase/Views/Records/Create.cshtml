@@ -1,0 +1,278 @@
+﻿@model ManageCase.Models.Record
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Record</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.internalCaseId, "internalCaseId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("internalCaseId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.internalCaseId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sourceId, "sourceId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("sourceId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.sourceId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.departmentId, "departmentId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("departmentId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.departmentId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.documentId, "documentId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("documentId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.documentId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.facilityId, "facilityId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("facilityId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.facilityId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.recordReferenceNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.recordReferenceNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.recordReferenceNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.pageNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pageNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.pageNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.recordEntryDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.recordEntryDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.recordEntryDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.providerFirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.providerFirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.providerFirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.providerLastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.providerLastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.providerLastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.memo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.memo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.memo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.serviceDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.serviceDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.serviceDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.noteSubjective, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.noteSubjective, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.noteSubjective, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.noteObjective, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.noteObjective, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.noteObjective, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.noteAssessment, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.noteAssessment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.noteAssessment, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.notePlan, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.notePlan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.notePlan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+<div>
+    <form id="medlineSearch" role="form">
+        <div class="form-group">
+            <label>Search Medline</label>
+            <input class="form-control" placeholder="Enter search terms" input type="text" id="term" value="" actions="/Records/PerformSearch" method="POST">
+        </div>
+
+        <button type="button" class="btn btn-default" onclick="PerformSearch()">Send</button>
+        <button type="reset" class="btn btn-default" onclick="ReloadPage()">Reset</button>
+    </form>
+</div>
+
+<div id="data-container"></div>
+
+<div>
+    <form id="medlineSearch" role="form">
+        <div class="form-group">
+            <label>Read File</label>
+            <input class="form-control" placeholder="Enter search terms" input type="text" id="pdfFile" value="" actions="/Records/ReadPDFFile()" method="POST">
+        </div>
+
+        <button type="button" class="btn btn-default" onclick="PerformSearch()">Send</button>
+        <button type="reset" class="btn btn-default" onclick="ReloadPage()">Reset</button>
+    </form>
+</div>
+    <div>
+        <p>The pdf text is here:</p>
+        <div id="pdftext"></div>
+    </div>
+
+
+}
+
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+<script>
+    function ReadFile(){
+    getElementById("pdfText").value = Model.pdfText;
+    }
+
+    function PerformTheSearch(term)
+    {
+        $.ajax(
+            "/Records/SendSearchRequest", true
+        )
+    }
+
+    function PerformSearch() {
+        var terms = jQuery('#term').val();
+        if (terms == "") {
+            alert("Please enter a valid search item.");
+        };
+        $.ajax({
+            "url": "https://wsearch.nlm.nih.gov/ws/query?db=healthTopics&term=asthma",
+            //"url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/drugnames.json",
+            //"url": "https://iterar-mapi-us.p.mashape.com/query?term=aspirin",
+            "type": "GET",
+            "dataType": "",
+            "data": { "term": terms },
+            "success": function (data) {
+                console.log(data);
+                //$('#pagination-container').pagination({
+                //    dataSource: data.results,
+                //    callback: function(data, pagination) {
+                //        var tableText = DisplayResults(data);
+                //        $('#data-container').html(tableText);
+
+                //    }
+                //});
+            }
+        })
+    }
+    function TryThis() {
+        $.getJSON("https://wsearch.nlm.nih.gov/ws/query?db=healthTopics&term=", "asthma", function (data) {
+            xmlContent = $(data.results[0]);
+            var Abstract = $(xmlContent).find("Abstract").text();
+            console.log(Abstract);
+
+        });
+
+
+        function LoadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("#data-container").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "https://wsearch.nlm.nih.gov/ws/query?db=healthTopics&term=asthma", true);
+            xhttp.send();
+        }
+
+        function ReloadPage() {
+            location.reload();
+        }
+
+        function DisplayResults(xml) {
+            var xmlDoc = xml.responseXML;
+            foreach(item in xmlDoc)
+            {
+                x = xmlDoc.getElementsByTagName("title");
+                document.getElementById("title").innerHTML =
+                "Org name: " +
+                x[i].getElementsByTagName("organizationName")[0].childNodes[0].nodeValue +
+                "<br>URL: " +
+                x[i].getElementsByTagName("url")[0].childNodes[0].nodeValue +
+                "<br>snippet: " +
+                x[i].getElementsByTagName("snippet")[0].childNodes[0].nodeValue;
+            }
+        }
+    }
+
+    
+
+</script>
+
+
+}
